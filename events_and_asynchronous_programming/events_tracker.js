@@ -2,20 +2,14 @@ const tracker = (() => {
   const list = [];
   
   function notInList(newEvent) {
-    return !list.some(listEvent => listEvent.type === newEvent.type && listEvent.target === newEvent.target);
+    return !(list.some(listEvent => listEvent.type === newEvent.type && listEvent.target === newEvent.target));
   }
   
   return {
     add(event) {
-      console.log('in tracker.add()');
-      console.log(`event: ${event.type} on ${event.target}`);
-      console.log(`event in list? ${notInList(event)}`);
-      
       if (notInList(event)) {
         list.push(event);
       }
-      
-      console.log(`tracker.list: ${list}`);
     },
     
     clear() {
@@ -24,7 +18,7 @@ const tracker = (() => {
     },
     
     elements() {
-      return list.map(({ target}) => target);
+      return list.map(({ target }) => target);
     },
     
     list() {
@@ -35,9 +29,6 @@ const tracker = (() => {
 
 function track(callback) {
   return event => {
-    console.log(`event: ${event}`);
-    console.log(`event.type: ${event.type}`);
-    console.log(`event.target: ${event.target}`);
     tracker.add(event);
     callback(event);
   };
