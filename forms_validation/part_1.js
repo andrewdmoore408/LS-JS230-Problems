@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (element.validity.valid) {
       clearErrorAndHighlight(element);
-      form.dispatchEvent(new Event('inputcorrect'));
+      form.dispatchEvent(new Event('validinput'));
     } else {
       const elementValidations = VALIDATIONS[element.name];
       const validationsToCheck = Object.keys(elementValidations);
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  form.addEventListener('inputcorrect', () => {
+  form.addEventListener('validinput', () => {
     if (form.checkValidity()) {
       document.querySelector('#formErrorMessage').classList.add('invisible');
     }
