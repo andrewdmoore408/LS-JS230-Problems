@@ -10,16 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const VALIDATIONS = {
       firstName: {
         valueMissing: 'First name is required',
+        patternMismatch: 'Only letters can be used in first name'
       },
       lastName: {
         valueMissing: 'Last name is required',
+        patternMismatch: 'Only letters can be used in last name'
       },
       email: {
         valueMissing: 'Email is required',
         patternMismatch: 'This email is not valid',
       },
       phoneNumber: {
-        patternMismatch: 'Format must be XXX-XXX-XXXX',
+        patternMismatch: 'Format must be 123-456-7890 (numbers and hyphens only)',
       },
       password: {
         valueMissing: 'Password is required',
