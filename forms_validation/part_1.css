@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(255, 249, 242);
+}
+
+form  {
+  display: table;
+}
+
+p     {
+  display: table-row;
+}
+
+label {
+  display: table-cell;
+}
+
+div#formErrorMessage, span.errorMessage {
+  text-align: center;
+  border-radius: 0.2rem;
+  font-weight: bolder;
+  padding: 5px;
+  margin: 30px;
+  background-color: #fdd;
+}
+
+span.errorMessage {
+  margin: 3px;
+}
+
+input {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: table-cell;
+  border-radius: 0.2rem;
+  padding: 3px;
+  margin: 5px;
+}
+
+input.invalid  {
+  border-color: #f33;
+  border-width: 3px;
+}
+
+input[type=submit] {
+  margin-top: 20px;
+}
+
+.invisible {
+  visibility: hidden;
+}
