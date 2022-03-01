@@ -51,6 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
     inputElement.classList.add('invalid');
   }
 
+  form.addEventListener('keydown', event => {
+    if (!event.target.tagName === 'INPUT' || !event.target.name.includes('Name')) return;
+
+    const invalidNameInput = (key) => {
+      const NAME_PATTERN = /[a-zA-Z]/;
+
+      return !NAME_PATTERN.test(key);
+    };
+
+    if (invalidNameInput(event.key)) {
+      event.preventDefault();
+    }
+  });
+
   form.addEventListener('focusout', event => {
     if (event.target.classList.contains('formValidate')) {
       validateElement(event.target);
