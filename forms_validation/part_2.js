@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         patternMismatch: 'This email is not valid',
       },
       phoneNumber: {
-        patternMismatch: 'Format must be 123-456-7890 (numbers and hyphens only)',
+        patternMismatch: 'Format must be 1234567890 (numbers only)',
       },
       password: {
         valueMissing: 'Password is required',
@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function handleCreditCardInput(event) {
-    const invalidCreditCardInput = (key) => {
+  function handleNumberInput(event) {
+    const invalidNumberInput = (key) => {
       const NUMBER_PATTERN = /\d/;
       return !NUMBER_PATTERN.test(key);
     }
@@ -83,18 +83,23 @@ document.addEventListener('DOMContentLoaded', () => {
       return true;
     }
 
-    if (invalidCreditCardInput(event.key) && notTextEditInput(event.key)) {
+    if (invalidNumberInput(event.key) && notTextEditInput(event.key)) {
       event.preventDefault();
     }
   }
 
+  function unhandledKeydown(event) {
+    return !(event.target.tagName === 'INPUT') ||
+      (event.target.name === 'email' || event.target.name === 'password');
+  }
+
   form.addEventListener('keydown', event => {
-    if (!event.target.tagName === 'INPUT' ||
-        (!event.target.name.includes('Name') && !event.target.name.includes('creditCard'))) return;
+    if (unhandledKeydown(event)) return;
 
     switch (event.target.name) {
       case 'creditCard':
-        handleCreditCardInput(event);
+      case 'phoneNumber':
+        handleNumberInput(event);
         break;
       default:
         handleNameInput(event);
