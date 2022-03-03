@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms, Part 1</title>
+  <link rel="stylesheet" href="part_2.css">
+  <script src="serializing_forms.js"></script>
+</head>
+<body>
+  <h1>Forms Part 1</h1>
+  <div id="messageContainer">
+    <div id="formErrorMessage" class="invisible">You must fix errors before submitting this form.</div>
+  </div>
+  <form action="#" method="post" novalidate>
+    <div>
+      <p>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" class="formValidate" name="firstName" pattern="[a-zA-Z]+" required>
+        <span class="errorMessage invisible" id="firstNameErrorMessage"></span>
+      </p>
+      <p>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" class="formValidate" name="lastName" pattern="[a-zA-Z]+" required>
+        <span class="errorMessage invisible" id="lastNameErrorMessage"></span>
+      </p>
+      <p>
+        <label for="email">Email:     </label>
+        <input type="text" id="email" class="formValidate" name="email" placeholder="name@domain.com" pattern=".+@.+" required>
+        <span class="errorMessage invisible" id="emailErrorMessage"></span>
+      </p>
+      <p>
+        <label for="phoneNumber">Phone:     </label>
+        <input type="tel" id="phoneNumber" class="formValidate" name="phoneNumber" placeholder="123-456-7890" pattern="\d{10}">
+        <span class="errorMessage invisible" id="phoneNumberErrorMessage"></span>
+      </p>
+      <p>
+        <label for="password">Password:</label>
+        <input type="password" id="password" class="formValidate" name="password" minlength="10" required>
+        <span class="errorMessage invisible" id="passwordErrorMessage"></span>
+      </p>
+    </div>
+    <div>
+      <p>
+        <fieldset>
+          <legend>
+            Credit card info
+          </legend>
+          <h5>
+            Please enter your credit card number: 4 numbers in each field
+          </h5>
+          <p>
+            <input type="text" class="formValidate creditCardMoveFocus" min="1000" maxlength="4" name="creditCard" placeholder="1234" pattern="[\d]{4}" required>
+            <span class="errorMessage invisible" name="creditCardErrorMessage"></span>
+          </p>
+          <p>
+            <input type="text" class="formValidate creditCardMoveFocus" min="1000" maxlength="4" name="creditCard" placeholder="5678" pattern="[\d]{4}" required>
+            <span class="errorMessage invisible" name="creditCardErrorMessage"></span>
+          </p>
+          <p>
+            <input type="text" class="formValidate creditCardMoveFocus" min="1000" maxlength="4" name="creditCard" placeholder="9012" pattern="[\d]{4}" required>
+            <span class="errorMessage invisible" name="creditCardErrorMessage"></span>
+          </p>
+          <p>
+            <input type="text" class="formValidate" min="1000" maxlength="4" name="creditCard" placeholder="3456" pattern="[\d]{4}" required>
+            <span class="errorMessage invisible" name="creditCardErrorMessage"></span>
+          </p>
+        </fieldset>
+      </p>
+    </div>
+    <p>
+      <input type="submit" value="Sign Up">
+    </p>
+    <footer>
+      <h5>Serialized Form</h5>
+      <p id="serializedFormData">
+      </p>
+    </footer>
+  </form>
+</body>
+</html>
