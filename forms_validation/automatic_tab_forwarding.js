@@ -93,10 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
       (event.target.name === 'email' || event.target.name === 'password');
   }
 
-  function pause(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
   form.querySelector('fieldset').addEventListener('keyup', event => {
     if (!event.target.classList.contains('creditCardMoveFocus')) return;
 
