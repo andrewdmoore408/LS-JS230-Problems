@@ -1,0 +1,44 @@
+body {
+  background-color: rgb(40, 40, 40);
+}
+
+/* figure {
+  display: flex;
+}
+
+figcaption {
+  color: rgba(255, 255, 255);
+  background-color: rgba(30, 30, 30, 0.3);
+}
+
+img {
+  max-width: 25%;
+  margin: auto;
+} */
+
+figure {
+    vertical-align: top;
+    display: inline-block;
+    /* flex-flow: column; */
+    padding: 25px;
+    width: 20%;
+    margin: auto;
+}
+
+img {
+    max-width: 300px;
+    max-height: 400px;
+}
+
+figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 5px;
+    text-align: center;
+    max-width: 100%;
+}
+
+.invisible {
+  visibility: hidden;
+}
