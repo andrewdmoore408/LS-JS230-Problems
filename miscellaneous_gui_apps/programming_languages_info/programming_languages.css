@@ -1,0 +1,17 @@
+body {
+  text-align: center;
+}
+
+#container {
+  max-width: 35%;
+  margin: auto;
+  text-align: justify;
+}
+
+.remove {
+  display: none;
+}
+
+.show {
+  display: inline;
+}
