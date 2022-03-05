@@ -26,11 +26,13 @@
             {{this.name}}
           </h3>
           <p>
-            {{beginningText}}<span>...</span><span class="remove">{{remainderText}}</span>
-
-
+            {{#if (isShortText)}}
+              {{this.description}}
+            {{else}}
+              {{beginningText}}<span>...</span><span class="remove">{{remainderText}}</span>
+              <button type="button">Show more</button>
+            {{/if}}
           </p>
-          <button type="button">Show more</button>
         </div>
       {{/each}}
     </script>

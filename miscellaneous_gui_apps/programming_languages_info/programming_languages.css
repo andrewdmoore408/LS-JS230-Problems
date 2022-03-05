@@ -2,6 +2,10 @@ body {
   text-align: center;
 }
 
+button {
+  display: inline-block;
+}
+
 #container {
   max-width: 35%;
   margin: auto;
