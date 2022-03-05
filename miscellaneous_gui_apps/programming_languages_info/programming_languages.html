@@ -28,11 +28,12 @@
           <p>
             {{#if (isShortText)}}
               {{this.description}}
+          </p>
             {{else}}
               {{beginningText}}<span>...</span><span class="remove">{{remainderText}}</span>
+            </p>
               <button type="button">Show more</button>
             {{/if}}
-          </p>
         </div>
       {{/each}}
     </script>
