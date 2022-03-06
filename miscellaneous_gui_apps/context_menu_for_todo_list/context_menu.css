@@ -1,0 +1,73 @@
+html, body {
+  background-color: rgb(255, 245, 226);
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  max-height: 2ch;
+  float: right;
+}
+
+span {
+  display: inline-block;
+  width: 350px;
+  padding: 10px;
+  margin: 3px;
+  background-color: rgb(49, 49, 255);
+  color: rgb(250, 250, 250);
+  border-radius: 0.5em;
+}
+
+dialog {
+  background-color: azure;
+  border-radius: 0.7em;
+}
+
+dialog::backdrop {
+  background: rgba(80, 80, 80, .5);
+}
+
+button {
+  border-radius: 0.2em;
+}
+
+button[value=Yes] {
+  background-color: rgb(255, 187, 175);
+}
+
+button[value=No] {
+  background-color: rgb(191, 255, 175);
+}
+
+.hidden {
+  display: none;
+}
+
+#contextMenu {
+  z-index: 500;
+  position: absolute;
+  border:rgb(255, 225, 206);
+  background: rgb(87, 87, 87);
+  color:rgb(255, 245, 226);
+  border-radius: 0.5em;
+  cursor: pointer;
+  padding: 10px;
+  padding-right: 40px;
+  width: 20%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  padding: 5px;
+  width: 100%;
+}
+
+ul li:hover {
+  background-color: rgb(120, 120, 120);
+}
