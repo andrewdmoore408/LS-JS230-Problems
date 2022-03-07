@@ -47,19 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         nonMatchingCars.forEach(nonMatchingCar => nonMatchingCar.classList.add('hidden'));
       });
-
-      // cars.forEach(car => {
-      //   car.classList.remove('hidden');
-
-      //   for (let attribute in filters) {
-      //     if (filters[attribute] !== 'noFilter') {
-
-      //       if (car.getAttribute(`data-${attribute}`) !== filters[attribute]) {
-      //         car.classList.add('hidden');
-      //       }
-      //     }
-      //   }
-      // });
     }
 
     #getOptionsLists() {
