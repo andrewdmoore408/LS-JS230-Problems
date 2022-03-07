@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../whitespace-reset.css">
+  <link rel="stylesheet" href="./car_shop.css">
+  <script src="../handlebars.min.js"></script>
+  <script src="./car_shop.js"></script>
+  <title>Car Shop</title>
+</head>
+<body>
+  <header >
+    <h1>Used Cars for Sale!</h1>
+    <div id="filters">
+      <label>Make:
+        <select id="makeSelect" name="makeSelect" class="filter" data-filter="make">
+        </select>
+      </label>
+      <label>Model:
+        <select id="modelSelect" name="modelSelect" class="filter" data-filter="model">
+        </select>
+      </label>
+      <label>Year:
+        <select id="yearSelect" name="yearSelect" class="filter" data-filter="year">
+        </select>
+      </label>
+      <label>Price:
+        <select id="priceSelect" name="priceSelect" class="filter" data-filter="price">
+        </select>
+      </label>
+      <button id='filterBtn' type="button">Filter</button>
+    </div>
+  </header>
+  <main>
+    <div id ="cars">
+    </div>
+  </main>
+  <script id="carTemplate" type="text/x-handlebars">
+    {{#each cars}}
+      <div class="car" data-make={{this.make}} data-model={{this.model}} data-year={{this.year}} data-price={{this.price}}>
+        <figure>
+          <img src={{this.image}} alt="Image of car for sale">
+        </figure>
+        <h3>{{this.make}} {{this.model}}</h3>
+        <p class="carInfo">Year: {{this.year}}</p>
+        <p class="carInfo">Price: {{this.price}}</p>
+        <a href="#">Buy</a>
+      </div>
+    {{/each}}
+  </script>
+
+  <script id="optionsTemplate" type="text/x-handlebars">
+    <option value="noFilter">All</option>
+    {{#each options}}
+      <option>{{this}}</option>
+    {{/each}}
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+h1 {
+  padding: 20px;
+  margin-bottom: 10px;
+  font-size: x-large;
+}
+
+header {
+  background-color: rgb(33, 33, 189);
+  color: white;
+}
+
+body {
+  background-color: gold;
+}
+
+select, button {
+  margin: 3.5%;
+  padding: 7px;
+  background-color: rgb(240, 205, 10);
+  border-radius: 0.2em;
+}
+
+#cars div {
+  display: inline-block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.car {
+  width: 250px;
+  margin: 40px 0 40px 40px;
+  border-radius: 4px;
+}
+
+.car img {
+  width: 100%;
+}
+
+a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 2px;
+  padding: 5px;
+  margin-top: 15px;
+  border-radius: 0.5em;
+  background-color: rgb(45, 42, 236);
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
+}
