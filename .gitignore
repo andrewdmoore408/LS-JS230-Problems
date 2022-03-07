@@ -1,3 +1,6 @@
 **/.DS_Store
 **/*_specs.txt
 **/handlebars.min.js
+**/images
+**/images/*
+**/whitespace-reset.css
